@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block link %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/add_admin.css') }}">
+{% endblock link %}
+
+{% block style %}
+    <style>
+        .navigator{
+            margin: 20px 0px;
+            width: 35%;
+        }
+    </style>
+{% endblock style %}
+
+{% block body %}
+    <div class="AboutLogin">
+        <br><br><br><br>
+        <h1>Personel Ekle</h1>
+        <form action="/personel_ekle" method="post" name="form" >
+            <label for="name">Personel Adı: </label><br>
+            <input class = "inputvalue" type="text" id="name" name="name" placeholder="Personel Adı" required/><br>
+            <label for="surname">Personel Soyadı: </label><br>
+            <input class = "inputvalue" type="text" id="surname" name="surname" placeholder="Personel Soyadı" required /><br>  
+            <label for="telNo">Telefon Numarası: </label><br>
+            <input class = "inputvalue" type="text" id="telNo" name="telNo" placeholder="Telefon Numarası" required /><br>
+            <label for="mesai">Haftalık Mesai Süresi: </label><br>
+            <input class = "inputvalue" type="text" id="mesai" name="mesai" placeholder="Haftalık Mesai Süresi" required /><br>
+
+
+            <button class = "buttonreset" type="reset">Reset</button>
+            <input class = "buttonsubmit" type="submit" value="Submit" />
+        </form>
+    </div>
+{% endblock body %}

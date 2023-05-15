@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block link %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/add_admin.css') }}">
+{% endblock link %}
+
+{% block style %}
+<style>
+    .navigator {
+        margin: 20px 0px;
+        width: 35%;
+    }
+</style>
+{% endblock style %}
+
+{% block body %}
+<div class="AboutLogin">
+    <br><br><br><br>
+    <h1>Park Alanına Araç Ekle</h1>
+    <form action="/parka_arac_ekle" method="post" name="form">
+        <label for="name">Park Alanı Adı: </label><br>
+        <input class="inputvalue" type="text" id="name" name="name" placeholder="Park Katı Adı" required /><br>
+        <label for="sayi">Giriş yapan araç sayısı: </label><br>
+        <input class="inputvalue" type="text" id="sayi" name="sayi" placeholder="Giriş yapan araç sayısı"
+            required /><br>
+
+        <br><br>
+        <button class="buttonreset" type="reset">Reset</button>
+        <input class="buttonsubmit" type="submit" value="Submit" />
+    </form>
+</div>
+{% endblock body %}

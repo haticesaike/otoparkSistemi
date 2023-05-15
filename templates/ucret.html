@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block link %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+{% endblock link %}
+
+{% block style %}
+    <style>
+        .navigator{
+            margin: 20px 0px;
+            width: 35%;
+        }
+    </style>
+{% endblock style %}
+
+{% block body %}
+    <div class="AboutLogin">
+        <br><br><br><br>
+        <a href="/ucretlerim"><button class="login-button navigator">Tarifelerim</button></a><br>
+        <a href="/ucret_ekle"><button class="login-button navigator">Tarife Ekle</button></a><br>
+        <a href="/ucret_cikar"><button class="login-button navigator">Tarife Çıkart</button></a><br>
+        <a href="/"><button class = "login-button navigator">Geri Dön</button></a><br>
+
+    </div>
+{% endblock body %}

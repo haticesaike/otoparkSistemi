@@ -1,0 +1,26 @@
+<nav class="navbar">
+  <span class="navbar-toggle" id="js-navbar-toggle">
+      <i class="fas fa-bars"></i>
+  </span>
+  <a href="/" class="logo">OOS</a>
+  <ul class="main-nav" id="js-menu">
+    {% if session["logged_in"] %}
+      <li>
+        <a href="/logout" class="nav-links">Çıkış Yap</a>
+      </li>
+    {% else %}
+      <li>
+        <a href="/login" class="nav-links">Giriş Yap</a>
+      </li>
+    {% endif %}
+  </ul>
+</nav>
+
+<script>
+  let mainNav = document.getElementById('js-menu');
+  let navBarToggle = document.getElementById('js-navbar-toggle');
+
+  navBarToggle.addEventListener('click', function () {
+      mainNav.classList.toggle('active');
+  });
+</script>

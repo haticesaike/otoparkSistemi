@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block link %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/add_admin.css') }}">
+{% endblock link %}
+
+{% block style %}
+<style>
+    button.buttonreset {
+        width: 40%;
+        margin: 5px;
+    }
+
+    .AboutLogin table {
+        margin: auto;
+        box-sizing: border-box;
+        border-collapse: collapse;
+    }
+
+    td {
+        border: 3px solid black;
+        padding: 3px 25px;
+        font-size: 24px;
+    }
+</style>
+{% endblock style %}
+
+{% block body %}
+<div class="AboutLogin">
+    <h1>{{otoparkAdi}} Tarife Listesi</h1><br><br>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Adı</th>
+                <th>Soyadı</th>
+                <th>Telefon Numarası</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% set count = liste_uzunluk %}
+
+            {% for n in range(count) %}
+
+            {% set item_1 = musteriler[n-1] %}
+            <tr>
+                <td>{{item_1[2]}}</td>
+                <td>{{item_1[3]}}</td>
+                <td>{{item_1[4]}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br><br>
+    <a href="/musteriler"><button class="buttonreset">Müşterilere Geri Dön</button></a><br>
+
+</div>
+{% endblock body %}

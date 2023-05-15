@@ -1,0 +1,26 @@
+
+{% extends "layout.html" %}
+
+{% block link %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/add_admin.css') }}">
+{% endblock link %}
+
+
+{% block body %}
+    <div class="AdminForm">
+        <h1>Otopark Sistemine Kayıt Ol</h1>
+        
+        <form action="/register" method="post" name="form" >
+            <label for="name">Otopark Adı: </label><br>
+            <input class = "inputvalue" type="text" id="name" name="name" placeholder="Otopark Adı" required/><br>
+            <label for="email">E-Mail: </label><br>
+            <input class = "inputvalue" type="text" id="email" name="email" placeholder="E-Mail" required /><br>
+            <label for="username">Kullanıcı Adı: </label><br>
+            <input class = "inputvalue" type="text" id="username" name="username" placeholder="Kullanıcı Adı" required /><br>
+            <label for="password">Şifreniz: </label><br>
+            <input class = "inputvalue" type="password" id="password" name="password" placeholder="Şifreniz" required /> <br>    
+            <button class = "buttonreset" type="reset">Reset</button>
+            <input class = "buttonsubmit" type="submit" value="Kayıt Ol" />
+        </form>
+    </div>
+{% endblock body %}

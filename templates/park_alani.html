@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block link %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+{% endblock link %}
+
+{% block style %}
+<style>
+    .navigator {
+        margin: 20px 0px;
+        width: 35%;
+    }
+</style>
+{% endblock style %}
+
+{% block body %}
+<div class="AboutLogin">
+    <br><br><br><br>
+    <a href="/park_alanlari"><button class="login-button navigator">Park Alanlarım</button></a><br>
+    <a href="/park_alani_ekle"><button class="login-button navigator">Park Alanı Ekle</button></a><br>
+    <a href="/park_alani_cikar"><button class="login-button navigator">Park Alanı Çıkar</button></a><br>
+    <a href="/parka_arac_ekle"><button class="login-button navigator">Araç Ekle</button></a><br>
+    <a href="/parka_arac_cikar"><button class="login-button navigator">Araç Çıkar</button></a><br>
+    <a href="/"><button class="login-button navigator">Geri Dön</button></a><br>
+
+</div>
+{% endblock body %}

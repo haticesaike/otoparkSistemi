@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block link %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+{% endblock link %}
+
+
+{% block body %}
+    <div class="Login">
+        <h1>OOS: Otopark Otomasyon Sistemi</h1>
+        <form action="/login" method="post" name="form" >
+
+            <label for="username">Kullanıcı Adı: </label><br>
+            <input class = "inputvalue" type="text" id="username" name="username" placeholder="Kullanıcı Adı" required /><br>
+
+            <label for="password">Şifre: </label><br>
+            <input class = "inputvalue" type="password" id="password" name="password" placeholder="Şifre" required /> <br>   <br>     
+            
+             <input class = "buttonsubmit last" type="submit" value="Giriş Yap" />
+        </form>  
+    </div>
+
+{% endblock body %}

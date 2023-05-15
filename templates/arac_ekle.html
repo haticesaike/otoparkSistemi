@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block link %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/add_admin.css') }}">
+{% endblock link %}
+
+{% block style %}
+<style>
+    .navigator {
+        margin: 20px 0px;
+        width: 35%;
+    }
+</style>
+{% endblock style %}
+
+{% block body %}
+<div class="AboutLogin">
+    <br><br><br><br>
+    <h1>Araç Ekle</h1>
+    <form action="/arac_ekle" method="post" name="form">
+        <label for="plaka">Araç Plakası: </label><br>
+        <input class="inputvalue" type="text" id="plaka" name="plaka" placeholder="Araç Plakası" required /><br>
+        <label for="marka">Araç Markası: </label><br>
+        <input class="inputvalue" type="text" id="marka" name="marka" placeholder="Araç Markası" required /><br>
+        <label for="marka">Araç Modeli: </label><br>
+        <input class="inputvalue" type="text" id="model" name="model" placeholder="Araç Modeli" required /><br>
+        <label for="marka">Araç Rengi: </label><br>
+        <input class="inputvalue" type="text" id="rengi" name="rengi" placeholder="Araç Rengi" required /><br>
+
+        <br><br>
+        <button class="buttonreset" type="reset">Reset</button>
+        <input class="buttonsubmit" type="submit" value="Submit" />
+    </form>
+</div>
+{% endblock body %}

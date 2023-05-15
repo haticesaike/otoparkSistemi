@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block link %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/add_admin.css') }}">
+{% endblock link %}
+
+{% block style %}
+<style>
+    .navigator {
+        margin: 20px 0px;
+        width: 35%;
+    }
+</style>
+{% endblock style %}
+
+{% block body %}
+<div class="AboutLogin">
+    <br><br><br><br>
+    <h1>Tarife Ekle</h1>
+    <form action="/ucret_ekle" method="post" name="form">
+        <label for="name">Tarife Adı: </label><br>
+        <input class="inputvalue" type="text" id="name" name="name" placeholder="Tarife Adı" required /><br>
+        <label for="sure">Tarife Süresi: </label><br>
+        <input class="inputvalue" type="text" id="sure" name="sure" placeholder="Tarife Süresi" required /><br>
+        <label for="ucreti">Tarife Ücreti: </label><br>
+        <input class="inputvalue" type="text" id="ucreti" name="ucreti" placeholder="Tarife Ücreti" required /><br>
+
+        <br><br>
+        <button class="buttonreset" type="reset">Reset</button>
+        <input class="buttonsubmit" type="submit" value="Submit" />
+    </form>
+</div>
+{% endblock body %}
